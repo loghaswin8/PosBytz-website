@@ -111,6 +111,252 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//////////
+const imageData = [
+    ["images/msfood.png", "images/Al-karakand-e1695319053772.png", "images/Jazz-cafe.jpg", "images/HOT-POT.png", "images/Diamond-Restaurant.png", "images/maaza.png"],
+    ["images/Besan-Flowers.png", "images/elite_fish.png", "images/Chimney-Cone.png", "images/continental_coffee.png", "images/Dokkan-Kebab.png", "images/Kebab-time.png"],
+    ["images/King-Fish.png", "images/ROYCE-Chocolate.png", "images/tails_of_city.jpg", "images/Sultan-Al-Arab.png", "images/Sams-Pizza.png", "images/shero-01.png"]
+];
+
+const slidesToShow = 4; // Number of slides to show at a time
+let currentIndex = [0, 0, 0]; // Keep track of current index for each row
+
+function createSliderRow(sliderId, rowData) {
+    const sliderRow = document.getElementById(sliderId);
+    sliderRow.innerHTML = ""; // Clear existing content
+
+    rowData.forEach((src, index) => {
+        const slide = document.createElement('div');
+        slide.classList.add('slide');
+        const img = document.createElement('img');
+        img.src = src;
+        slide.appendChild(img);
+        sliderRow.appendChild(slide);
+    });
+}
+
+function updateVisibleSlides(rowIndex) {
+    const sliderRow = document.querySelectorAll('.slider-wrapper')[rowIndex];
+    const slides = sliderRow.children;
+
+    // Hide all slides initially
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = 'none';
+    }
+
+    // Show 4 slides starting from the current index
+    for (let i = currentIndex[rowIndex]; i < currentIndex[rowIndex] + slidesToShow; i++) {
+        const slideIndex = i % slides.length; // Use modulus for circular sliding
+        slides[slideIndex].style.display = 'block';
+    }
+}
+
+function moveSlide(rowIndex, direction) {
+    const sliderRow = document.querySelectorAll('.slider-wrapper')[rowIndex];
+    const totalSlides = sliderRow.children.length;
+
+    // Move by 1 image instead of 4
+    currentIndex[rowIndex] = (currentIndex[rowIndex] + direction + totalSlides) % totalSlides;
+
+    // Update visible slides
+    updateVisibleSlides(rowIndex);
+}
+
+// Initialize sliders
+imageData.forEach((rowData, index) => {
+    createSliderRow(`slider${index + 1}`, rowData);
+    updateVisibleSlides(index); // Show the initial set of 4 images
+});
+
+// TESTIMONIALS
+const testimonials = [
+    { 
+        img: 'images/test-maaza-83x88.png',
+        name: 'MazaArabia, KSA', 
+        text: 'We are providing broast chicken food across KSA with about 25 outlets and growing. With PosBytz, we have automated the entire operations from purchases, inventory, sales, and also enabled our own online ordering system with ease.' 
+    },
+    { 
+        img: 'images/test-farmarika.webp', 
+        name: 'Farmarika, Grocery Business', 
+        text: 'This ERP platform is simple and excellent. It is has the omnichannel model to sell the products. I have been using this product for more than 1 year. It is very good to manage the catalogue, items, pricing, taxing, customers, employees, etc.' 
+    },
+    { 
+        img: 'images/test-tehran_taste_persia-83x88.png', 
+        name: 'Tehran-the Taste Of Persia', 
+        text: 'I have been using Posbytz for more than two years, would definitely recommend to all my fellow restaurant owners given the fact it gives complete control over your business. Best would be the branded apps and online ordering platform integrated with POS and inventory.'
+    },
+    { 
+        img: 'images/test-Al-karakand-e1695319023203-83x71.png', 
+        name: 'Alkarkand Abha KSA', 
+        text: 'We have recently migrated our software to PosBytz so far have been always improvising the features based on request and strongly recommend for F&B groups managing complex restaurant operations with multiple brands from purchases, inventory, transfers, Accounting to P&L reports. Integrated QR code ordering system with POS works seamlessly and gives a great customer experience.'
+    },
+    { 
+        img: 'images/test-Sams-Pizza-83x88.png', 
+        name: "Sam's Pasta Pizza, Qatar", 
+        text: 'We are an traditional Italian cuisine based brand. Have been using PosBytz for our Restaurant Management operations and so far there has been no issues with respect to the software and as a owner can able see my business online from anywhere. PosBytz is very easy to use for setting up menu , ingredients/recipes , POS , inventory etc..,'
+    }
+];
+
+let currentTestIndex = 0;
+
+function generateTestimonials() {
+    const sliderWrapper = document.getElementById("testimonialSlider");
+    sliderWrapper.innerHTML = ''; // Clear previous testimonials
+
+    // Loop through testimonials and append only 2 at a time
+    for (let i = 0; i < 2; i++) {
+        const index = (currentTestIndex + i) % testimonials.length; // Circular indexing
+        const testimonial = testimonials[index];
+        
+        const testimonialSlide = document.createElement("div");
+        testimonialSlide.classList.add("testimonial-slide");
+        
+        testimonialSlide.innerHTML = `
+            <div class="testimonial">
+                <img src="${testimonial.img}" alt="${testimonial.name}">
+                <h3>${testimonial.name}</h3>
+                <p>${testimonial.text}</p>
+            </div>
+        `;
+
+        sliderWrapper.appendChild(testimonialSlide);
+    }
+}
+
+function moveTestimonial(direction) {
+    currentTestIndex = (currentTestIndex + direction + testimonials.length) % testimonials.length; // Circular motion
+
+    generateTestimonials(); // Regenerate testimonials on every move
+}
+
+// Initialize the slider
+generateTestimonials();
+
+///////
+// FAQ content stored as an array of objects (question & answer)
+const faqData = [
+    {
+        question: "What is Retail ERP software?",
+        answer: "Retail ERP software is a comprehensive solution designed to meet the specific needs of retail businesses. It integrates various functions and processes, such as inventory management, point of sale (POS), sales and order management, customer relationship management (CRM), and Accounting, into a single software system."
+    },
+    {
+        question: "What is Restaurant ERP software?",
+        answer: "Restaurant ERP software offers managing a multiple chain restaurant business at one place from managing procurement, vendors, payments, POS, Sales , Online ordering , QR code ordering, CRM for promotions, recipe & ingredients management and Accounting."
+    },
+    {
+        question: "Why do Retailers need ERP software?",
+        answer: "Retailers need ERP software for several reasons: <br> Streamlined Operations: ERP software integrates various business functions, such as inventory management, sales, POS, customer management, and financials, into a centralized system. This streamlines operations, reduces manual tasks, and improves overall efficiency.<br> Inventory Management: Effective inventory management is crucial for retailers to avoid stockouts or overstocking. ERP software provides real-time visibility into inventory levels, automates replenishment processes, tracks stock movement, and optimizes inventory to ensure accurate stock levels and reduce carrying costs.<br> Sales and Order Management: ERP software facilitates efficient management of sales and customer orders. It enables retailers to process orders seamlessly, track order fulfilment, manage pricing and discounts, and handle returns or exchanges, ensuring smooth and timely order processing.<br> Customer Relationship Management (CRM): CRM functionality within ERP software helps retailers manage customer data, track interactions, and personalise customer experiences.<br> Financial Management: ERP software includes financial modules that handle tasks like accounting, invoicing, budgeting, and financial reporting"
+    },
+    {
+        question: "What is cloud-based ERP software?",
+        answer: "Cloud-based ERP software is a type of ERP system that is hosted and accessed over a cloud infrastructure. In this model, the software would be managed and maintained by an ERP provider with a Pay as you Use model on a Subscription."
+    },
+    {
+        question: "Benefits of using Retail ERP System?",
+        answer: "Using a Retail ERP system offers several benefits for retailers having one system to manage both outlet and online business along with managing all your operations from customer management, sales, Loyalty and accounting under one roof."
+    },
+    {
+        question: "Why is PosBytz the best ERP software for Restaurant, and Retail?",
+        answer: "PosBytz offers a complete suite for Retail and Restaurant businesses to automate their business operations with tools to also increase their business online and offline. PosBytz offers POS , inventory management, Sales Management, CRM , Accounting and HR & Payroll management."
+    },
+    {
+        question: "How to download Free Retail ERP Software from PosBytz?",
+        answer: "You can start using PosBytz for Free with our Free plan sign-up now"
+    },
+    {
+        question: "What is cost of ERP software ?",
+        answer: "Cost of the PosBytz ERP software starts as low as from $19 Dollars per month. To know more about our plan please check our pricing."
+    },
+    {
+        question: "Does ERP software works for Cafe shop ? ",
+        answer: "Yes PosBytz ERP Software for cafe shops with POS, inventory, employee, and customer management. Consider user-friendliness, mobile accessibility, and integration for optimal cafe shop operations."
+    },
+    {
+        question: "Does the ERP Software work for Cloud kitchen business?",
+        answer: "Cloud kitchen ERP software with robust order management, inventory tracking, kitchen workflow, and delivery integration. Ensure scalability, customization, and user-friendly cloud-based features for efficiency."
+    },
+    {
+        question: "What is Retail Grocery Store ERP Software?",
+        answer: "Retail grocery store ERP software is a comprehensive system that integrates various operations, including inventory management, sales, and customer relationships, to streamline and enhance grocery store management."
+    },
+    {
+        question: "What is Best ERP software for Supermarkets? ",
+        answer: "PosBytz ERP software for Supermarket include inventory tracking, point of sale (POS), supplier management, employee scheduling, analytics, accounting and other systems."
+    }
+];
+
+// Function to dynamically generate FAQ items
+function generateFAQ() {
+    const faqContainer = document.getElementById('faq-container');
+
+    faqData.forEach((faq, index) => {
+        const faqItem = document.createElement('div');
+        faqItem.classList.add('elementor-toggle-item');
+        
+        const faqTitle = document.createElement('div');
+        faqTitle.classList.add('elementor-tab-title');
+        faqTitle.setAttribute('data-tab', index + 1);
+        faqTitle.setAttribute('role', 'button');
+        faqTitle.setAttribute('aria-controls', `elementor-tab-content-160${index + 1}`);
+        faqTitle.setAttribute('aria-expanded', 'false');
+
+        const faqIcon = document.createElement('span');
+        faqIcon.classList.add('elementor-toggle-icon');
+        faqIcon.setAttribute('aria-hidden', 'true');
+        faqIcon.innerHTML = `<span class="elementor-toggle-icon-closed"><i class="fas fa-caret-right"></i></span>`;
+        
+        const faqQuestion = document.createElement('a');
+        faqQuestion.classList.add('elementor-toggle-title');
+        faqQuestion.setAttribute('tabindex', '0');
+        faqQuestion.textContent = faq.question;
+
+        const faqContent = document.createElement('div');
+        faqContent.id = `elementor-tab-content-160${index + 1}`;
+        faqContent.classList.add('elementor-tab-content');
+        faqContent.setAttribute('data-tab', index + 1);
+        faqContent.setAttribute('role', 'region');
+        faqContent.setAttribute('aria-labelledby', `elementor-tab-title-160${index + 1}`);
+
+        const faqAnswer = document.createElement('p');
+        faqAnswer.innerHTML = faq.answer;
+
+        faqContent.appendChild(faqAnswer);
+        faqTitle.appendChild(faqIcon);
+        faqTitle.appendChild(faqQuestion);
+        faqItem.appendChild(faqTitle);
+        faqItem.appendChild(faqContent);
+        
+        faqContainer.appendChild(faqItem);
+    });
+}
+
+// Function to toggle FAQ answer visibility
+function toggleFAQ(event) {
+    const clickedItem = event.currentTarget;
+    const content = clickedItem.nextElementSibling;
+    const isOpen = content.classList.contains('open');
+
+    // Close all other items
+    document.querySelectorAll('.elementor-tab-content').forEach((item) => {
+        item.classList.remove('open');
+        item.previousElementSibling.setAttribute('aria-expanded', 'false');
+    });
+
+    // Open the clicked one if it wasn't already open
+    if (!isOpen) {
+        content.classList.add('open');
+        clickedItem.setAttribute('aria-expanded', 'true');
+    }
+}
+
+// Initialize FAQ
+generateFAQ();
+
+// Add event listener to toggle answers on click
+document.querySelectorAll('.elementor-tab-title').forEach((title) => {
+    title.addEventListener('click', toggleFAQ);
+});
+
 
 
 

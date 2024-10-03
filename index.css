@@ -165,3 +165,12 @@ body {
       width: 80px; /* Smaller logos on mobile */
   }
 }
+
+/* Brand section */
+#brand-head-1{
+    color: #2c2c51;
+    font-family: "Poppins", Sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 55px;
+}
