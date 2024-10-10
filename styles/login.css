@@ -1,0 +1,148 @@
+body{
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}/* Language Selector */
+
+.lang-selector {
+    position: absolute;
+    top: 10px;   /* Distance from the top */
+    right: 10px; /* Distance from the right */
+}
+
+/* Login Section */
+.login-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.login-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-image img {
+    width: 728.333px;
+    height: 636.4px;
+}
+
+.login-form-container {
+    flex: 1;
+    max-width: 376.25px;
+    height: 557.967px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-logo {
+    text-align: left;
+}
+
+.login-header h3 {
+    font-size: 24px;
+    color: #051441;
+    margin-bottom: 10px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+}
+
+.login-header p {
+    color: #69727d;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+
+}
+
+.login-inputs {
+    margin-bottom: 15px;
+    position: relative; /* Allow positioning of the button inside */
+}
+
+.login-input {
+    width: calc(100% - 50px); /* Adjust width to account for button */
+    border: 1px solid #ced4da;
+    padding: 15px;
+    font-size: 16px;
+    display: inline-block; /* Keep input inline with button */
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.js_password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 8px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #FF8C00;
+}
+
+.login-links {
+    text-align: left;
+    margin-bottom: -20px;
+}
+
+.login-links a {
+    color: #ff8c00;
+    text-decoration: none;
+}
+
+.login-links small {
+    color: #051441;
+}
+
+.login-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-button button {
+    font-size: 18px;
+    background-color: #ff8c00;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ff5722 !important;
+    border-color: #ff5722 !important;
+}
+
+.login-button button:hover {
+    color: black;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-section {
+        flex-direction: column;
+    }
+
+    .login-image {
+        margin-bottom: 30px;
+    }
+}

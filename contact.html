@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - PosBytz</title>
+    <link rel="stylesheet" href="styles/contact.css">
+    <link rel="stylesheet" href="styles/about-us.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+    <style>
+        .icons ul li a {
+            color: #fff; /* Initial text color */
+            text-decoration: none;
+            padding: 10px 0; /* Padding for the anchor */
+            display: inline-block;
+            position: relative;
+            transition: color 0.3s;
+            padding-right: 16px;
+        }
+        .icons ul li ul.subnav-content a {
+            color: #051441; /* Text color for sub-navigation items */
+            text-decoration: none; /* No underline */
+            padding: 5px 10px; /* Padding for better spacing */
+            display: block; /* Make it block-level */
+        }
+        .icons ul li ul.subnav-content a:hover{
+            color: #ff9800;
+        }
+
+        .subnav-content li a:hover {
+            color: #9b51e0; /* Change color on hover if desired */
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Header with Email -->
+    <div class="hea">
+        <a href="mailto:support@posbytz.com" class="email-link">Email: <span>support@posbytz.com</span></a>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="flex-container1" id="navbar">
+        <a href="index.html">
+            <img class="main_logo_img" src="https://posbytz.com/wp-content/uploads/2021/09/logo_light.svg" srcset="https://posbytz.com/wp-content/uploads/2021/09/logo_light_2x.svg 2x" alt="PosBytz">
+            <img class="sticky_logo_img" src="https://posbytz.com/wp-content/uploads/2021/09/logo_default.svg" srcset="https://posbytz.com/wp-content/uploads/2021/09/logo_default_2x.svg 2x" alt="PosBytz">
+        </a>
+        <div class="icons">
+            <ul>
+                <li class="subnav" id="icon-bar">
+                    <a href="#">Explore </a>
+                    <ul class="subnav-content">
+                        <li><a href="#">POS</a></li>
+                        <li><a href="#">Restaurant</a></li>
+                        <li><a href="#">Retail</a></li>
+                        <li><a href="#">Online Ordering</a></li>
+                        <li><a href="#">E-commerce</a></li>
+                        <li><a href="#">Integration</a></li>
+                        <li><a href="#">E-invoicing</a></li>
+                        <li><a href="#">Free Delivery App</a></li>
+                    </ul>
+                </li>
+                <li class="subnav">
+                    <a href="#">Partners </a>
+                    <ul class="subnav-content">
+                        <li><a href="#">Partner Program</a></li>
+                        <li><a href="#">Become a Partner</a></li>
+                        <li><a href="#">Partner Portal</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Blog</a></li>
+                <li class="subnav">
+                    <a href="#">Company</a>
+                    <ul class="subnav-content">
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li><a href="support.html">Support</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li class="subnav">
+                    <a href="#">Language </a>
+                    <ul class="subnav-content">
+                        <li><a href="#">English</a></li>
+                        <li><a href="#">العربية</a></li>
+                    </ul>
+                </li>
+                <li><a href="careers.html">Careers</a></li>
+            </ul>
+        </div>
+        <div>
+            <button class="button-started button2">Get Started</button>
+        </div>
+    </div>
+    <section class="hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <div class="breadcrumbs">
+                <a href="demo.html">Home</a> > Contact Us
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-header">
+                <h2>For All General Inquiries</h2>
+                <p>Please submit your questions, comments, and other inquiries below along with your contact information. One of our team members will reach out to you promptly.</p>
+            </div>
+            
+            <form class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+    
+                <div class="form-group phone-group">
+                    <div class="phone-input">
+                        <select id="country-selector" name="country" class="country-select">
+                            <!-- Options will be populated here -->
+                        </select>
+                        <input type="tel" id="phone-number" name="your-phone" placeholder="Your Phone" required>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <input type="text" placeholder="Subject" required>
+                </div>
+    
+                <div class="form-group">
+                    <textarea placeholder="Your Message" rows="4" required></textarea>
+                </div>
+    
+                <button type="submit" class="submit-button">Submit Details</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <section class="footer-section">
+        <footer class="footer-grid">
+          <div class="footer-item">
+            <div class="footer-logo">
+              <img src="images/logo_posbytz.svg" alt="">
+            </div>
+            <div class="footer-description">
+              <p>PosBytz is your comprehensive platform to manage everything you need to sell and grow your business.</p>
+            </div>
+            <div class="footer-description">
+              <p>PosBytz is a product of Bytize, Inc.</p>
+            </div>
+          </div>
+      
+          <div class="footer-item">
+            <div class="footer-heading">
+              <h3>PRODUCT</h3>
+            </div>
+            <ul class="footer-links">
+              <li>Pricing</li>
+              <li>Watch Videos</li>
+              <li>Best POS Software</li>
+              <li>PosBytz for Restaurants</li>
+              <li>PosBytz for Retail</li>
+              <li>Cloud POS</li>
+              <li>Android POS</li>
+              <li>PosBytz for Small Business</li>
+            </ul>
+      
+            <div class="footer-heading">
+              <h3>PARTNERS</h3>
+            </div>
+            <ul class="footer-links">
+              <li>Partner Program</li>
+              <li>Become a Partner</li>
+              <li>Partner Portal</li>
+            </ul>
+          </div>
+      
+          <div class="footer-item">
+            <div class="footer-heading">
+              <h3>COMPANY</h3>
+            </div>
+            <ul class="footer-links">
+              <li>About Us</li>
+              <li>Contact Us</li>
+              <li>PosBytz Blog</li>
+              <li>Terms and Conditions</li>
+              <li>Privacy Policy</li>
+            </ul>
+      
+            <div class="footer-heading">
+              <h3>ACCOUNT</h3>
+            </div>
+            <ul class="footer-links">
+              <li>Login to PosBytz</li>
+              <li>Register with PosBytz</li>
+            </ul>
+          </div>
+      
+          <div class="footer-item">
+            <div class="footer-heading">
+              <h3>SUPPORT</h3>
+            </div>
+            <ul class="footer-links">
+              <li>Help Center</li>
+              <li>Status Monitor</li>
+              <li>Contact Support</li>
+            </ul>
+      
+            <div class="footer-heading">
+              <h3>FIND US ON</h3>
+            </div>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/posbytz/" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="https://twitter.com/posbytz" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/posbytz-inc-05a909161/" target="_blank">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        <div class="bytize-widget-wrap">
+            <div class="bytize-widget-divider">
+                <div class="bytize-divider">
+                    <span class="bytize-divider-separator"></span>
+                </div>
+                <div class="bytize-widget-heading">
+                    <span class="bytize-heading-title">© 2023 Bytize</span>
+                </div>
+            </div>
+        
+            
+        </div>
+        </footer>
+      </section>
+    
+    
+
+    <script src="scripts/contact.js"></script>
+</body>
+</html>

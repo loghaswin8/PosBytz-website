@@ -1,0 +1,188 @@
+/* Reset the default styles */
+body {
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+}
+
+/* Language Selector */
+.lang-selector {
+    position: absolute;
+    top: 10px;   /* Distance from the top */
+    right: 10px; /* Distance from the right */
+}
+
+/* Login Section */
+.login-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.login-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-image img {
+    width: 728.333px;
+    height: 636.4px;
+}
+
+.login-form-container {
+    flex: 1;
+    max-width: 376.25px;
+    height: 557.967px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.login-logo {
+    text-align: left;
+}
+
+.login-header h3 {
+    font-size: 24px;
+    color: #051441;
+    margin-bottom: 10px;
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+}
+
+.login-header p {
+    color: #69727d;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* Input Fields */
+.login-inputs {
+    margin-bottom: 15px;
+    position: relative; /* Allows positioning */
+}
+
+.login-input {
+    width: 100%;
+    border: 1px solid #ced4da;
+    padding: 15px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Select Business Type */
+select.js_business-category-select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Country Selector and Mobile Number in the same row */
+.login-inputs.country-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.country-select {
+    width: 55px; /* Adjust width to your preference */
+    background-size: 50px 50px; /* Size for the flag */
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    font-size: 20px;
+}
+
+.country-select img {
+    width: 30px;
+    height: 20px;
+    display: block; /* Only the flag will be visible */
+}
+
+.country-input-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Phone Number Input */
+.phone-input {
+    width: calc(100% - 100px); /* Adjust width to be next to country select */
+    display: inline-block;
+}
+
+/* Login Links */
+.login-links {
+    text-align: left;
+    margin-bottom: -20px;
+}
+
+.login-links a {
+    color: #ff8c00;
+    text-decoration: none;
+}
+
+.login-links small {
+    color: #051441;
+}
+
+/* Button Styling */
+.login-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-button button {
+    font-size: 18px;
+    background-color: #ff8c00;
+    color: #fff;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #ff5722 !important;
+    border-color: #ff5722 !important;
+}
+
+.login-button button:hover {
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-section {
+        flex-direction: column;
+    }
+
+    .login-image {
+        margin-bottom: 30px;
+    }
+
+    .login-inputs.country-mobile {
+        flex-direction: column;
+    }
+
+    .phone-input, .country-select {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

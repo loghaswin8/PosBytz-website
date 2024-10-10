@@ -1,9 +1,23 @@
+//Get all the buttons
+const buttons = document.querySelectorAll('.js-review');
+
+// Function to handle button clicks
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove 'active' class from all buttons
+        buttons.forEach(btn => btn.classList.remove('active'));
+
+        // Add 'active' class to the clicked button
+        this.classList.add('active');
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     // Define the content and image for each button
     const contentData = {
         "js-rev-1": {
             text: `
-                <h3>Our POS software offers a wide range of powerful features designed to enhance your retail and restaurant operations. Here are some key highlights:</h3>
+                <h3 style="color:#FF8C00"">Our POS software offers a wide range of powerful features designed to enhance your retail and restaurant operations. Here are some key highlights:</h3>
                 <ul>
                     <li>Easy-to-Use Interface</li>
                     <li>Device Agnostic: Works on Windows, Android, and iOS</li>
@@ -16,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "js-rev-2": {
             text: `
-                <h3>Our order management system is designed to streamline and optimize the orders from multiple channels outlets or online channels. Here are some key features of our order management system:</h3>
+                <h3 style="color:#FF8C00">Our order management system is designed to streamline and optimize the orders from multiple channels outlets or online channels. Here are some key features of our order management system:</h3>
                 <ul>
                     <li>Manage Sales orders from multiple channels</li>
                     <li>Customise multi pricing for same items different channels</li>
@@ -29,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "js-rev-3": {
             text: `
-                <h3>Our comprehensive purchase and inventory management features empower your retail or restaurant business to efficiently manage and optimize your purchasing processes and inventory levels. Here are the key features that our software offers:</h3>
+                <h3 style="color:#24007E">Our comprehensive purchase and inventory management features empower your retail or restaurant business to efficiently manage and optimize your purchasing processes and inventory levels. Here are the key features that our software offers:</h3>
                 <ul>
                     <li>Purchase Order Creation: Generate purchase orders directly within the system</li>
                     <li>Supplier Management: Manage your vendors track all your purchase and payments against any vendor</li>
@@ -42,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "js-rev-4": {
             text: `
-                <h3>Our Omnichannel ecommerce and online ordering features provide a seamless and convenient way for your retail or restaurant business to expand its reach and cater to the growing demands of online customers.</h3>
+                <h3 style="color:#A90030">Our Omnichannel ecommerce and online ordering features provide a seamless and convenient way for your retail or restaurant business to expand its reach and cater to the growing demands of online customers.</h3>
                 <ul>
                     <li>Online Store Creation: Establish an attractive and user-friendly online store to showcase your products or menu items. Customize the design, layout, and branding to create a unique online shopping experience that reflects your brand identity</li>
                     <li>Product Catalog Management: Easily manage your product inventory within the online store. Add new products, update pricing and descriptions, and categorize items for easy navigation. </li>
@@ -55,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "js-rev-5":{
             text: `
-                <h3>Our accounting and finance features provide robust tools to manage the financial aspects of your retail or restaurant business from tracking expenses to generating financial reports</h3>
+                <h3 style="color:#1AA480">Our accounting and finance features provide robust tools to manage the financial aspects of your retail or restaurant business from tracking expenses to generating financial reports</h3>
                 <ul>
                     <li>General Ledger: Maintain a centralized and organized record of your financial transactions, including sales, purchases, expenses, and payments. Our software automatically updates the general ledger, ensuring accurate and up-to-date financial reports</li>
                     <li>Accounts Payable and Receivable: Manage your payables and receivables efficiently. Keep track of outstanding invoices, manage vendor payments, and handle customer invoices and payments.</li>
@@ -67,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "js-rev-6":{
             text: `
-                <h3>Our CRM (Customer Relationship Management) and marketing automation features are designed to help you effectively manage customer interactions, nurture relationships, and automate marketing campaigns.</h3>
+                <h3 style="color:#6C0758">Our CRM (Customer Relationship Management) and marketing automation features are designed to help you effectively manage customer interactions, nurture relationships, and automate marketing campaigns.</h3>
                 <ul>
                     <li>Customer Database Management: Maintain a centralized customer database with detailed profiles, including contact information, purchase history, preferences, and communication history.</li>
                     <li>Customer Grouping: Group your customer database into segments based on demographics, behaviour, purchase history, or other criteria</li>
@@ -79,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         },
         "js-rev-7":{
             text: `
-                <h3>Our HR (Human Resources) and Payroll features provide comprehensive tools to streamline your employee management and payroll processes. Here are the key features our software offers:</h3>
+                <h3 style="color:#6C0758">Our HR (Human Resources) and Payroll features provide comprehensive tools to streamline your employee management and payroll processes. Here are the key features our software offers:</h3>
                 <ul>
                     <li>Employee Database: Maintain a centralized employee database with essential information, including personal details, employment history, job roles, and certifications.</li>
                     <li>Attendance and Time Tracking: Track employee attendance and working hours efficiently. Our software supports various methods of time tracking, including manual entry, biometric devices, or integrations with time clock systems.</li>
@@ -104,8 +118,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Set the content and image dynamically
             contentDisplay.innerHTML = `
-                <img src="${content.imgSrc}" alt="">
                 <div class="content-text">${content.text}</div>
+                <img src="${content.imgSrc}" alt="">
+                
             `;
         });
     });
@@ -155,7 +170,7 @@ function moveSlide(rowIndex, direction) {
     const sliderRow = document.querySelectorAll('.slider-wrapper')[rowIndex];
     const totalSlides = sliderRow.children.length;
 
-    // Move by 1 image instead of 4
+    // Move by 1 image
     currentIndex[rowIndex] = (currentIndex[rowIndex] + direction + totalSlides) % totalSlides;
 
     // Update visible slides
@@ -165,7 +180,7 @@ function moveSlide(rowIndex, direction) {
 // Initialize sliders
 imageData.forEach((rowData, index) => {
     createSliderRow(`slider${index + 1}`, rowData);
-    updateVisibleSlides(index); // Show the initial set of 4 images
+    updateVisibleSlides(index); //initial set of 4 images
 });
 
 // TESTIMONIALS
